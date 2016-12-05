@@ -1,0 +1,55 @@
+{
+  "project_info": {
+    "project_number": "786415300892",
+    "firebase_url": "https://nearbytaxi-defb1.firebaseio.com",
+    "project_id": "nearbytaxi-defb1",
+    "storage_bucket": "nearbytaxi-defb1.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:786415300892:android:6af540ed7148a436",
+        "android_client_info": {
+          "package_name": "com.example.windows10.passenger"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "786415300892-c51mb3sjhoon6p4u3pvbraa2rbhsq7v5.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.example.windows10.passenger",
+            "certificate_hash": "4B9C69F61CD94387FAF8815CE4BFE1C6AAF1355C"
+          }
+        },
+        {
+          "client_id": "786415300892-koflgaj4ko93jnp1lrf5fnrj6mnuu7v7.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyA4WYfTST22rHK6K4D8KieIluH4CseyN2k"
+        }
+      ],
+      "services": {
+        "analytics_service": {
+          "status": 1
+        },
+        "appinvite_service": {
+          "status": 2,
+          "other_platform_oauth_client": [
+            {
+              "client_id": "786415300892-koflgaj4ko93jnp1lrf5fnrj6mnuu7v7.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        },
+        "ads_service": {
+          "status": 2
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
