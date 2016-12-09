@@ -64,6 +64,7 @@ public class MapsActivity extends FragmentActivity implements OnMapReadyCallback
     private DatabaseReference mDatabase;
     private DatabaseReference Database;
     private ChildEventListener v;
+
     private String Uid;
     private String path="users/passenger/";
     private Map<String,Driver_Marker> d=new HashMap<>();
@@ -318,7 +319,7 @@ public class MapsActivity extends FragmentActivity implements OnMapReadyCallback
                     Toast.makeText(MapsActivity.this,"driver gets offline",Toast.LENGTH_SHORT).show();
 
                 }
-                 if(mp.getD().r_status==-1 && driver.r_status==0){
+                 else if(mp.getD().r_status==-1 && driver.r_status==0){
 
                      if(!driver.passengerKey.equals(p.key)){
                          RemoveMarker(key);
@@ -337,6 +338,8 @@ public class MapsActivity extends FragmentActivity implements OnMapReadyCallback
 
                      if(mp.getD().passengerKey.equals(p.key))
                          mp.getM().setIcon(BitmapDescriptorFactory.defaultMarker(BitmapDescriptorFactory.HUE_YELLOW));
+
+                    mp.d.r_status=1;
 
                  }
 
