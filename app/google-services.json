@@ -1,35 +1,43 @@
 {
   "project_info": {
-    "project_number": "786415300892",
-    "firebase_url": "https://nearbytaxi-defb1.firebaseio.com",
-    "project_id": "nearbytaxi-defb1",
-    "storage_bucket": "nearbytaxi-defb1.appspot.com"
+    "project_number": "203311415511",
+    "firebase_url": "https://nearbytaxifinder.firebaseio.com",
+    "project_id": "nearbytaxifinder",
+    "storage_bucket": "nearbytaxifinder.appspot.com"
   },
   "client": [
     {
       "client_info": {
-        "mobilesdk_app_id": "1:786415300892:android:6af540ed7148a436",
+        "mobilesdk_app_id": "1:203311415511:android:6af540ed7148a436",
         "android_client_info": {
           "package_name": "com.example.windows10.passenger"
         }
       },
       "oauth_client": [
         {
-          "client_id": "786415300892-c51mb3sjhoon6p4u3pvbraa2rbhsq7v5.apps.googleusercontent.com",
+          "client_id": "203311415511-dh4vg8bnn60671al39g03ho43t6j87t0.apps.googleusercontent.com",
           "client_type": 1,
           "android_info": {
             "package_name": "com.example.windows10.passenger",
-            "certificate_hash": "4B9C69F61CD94387FAF8815CE4BFE1C6AAF1355C"
+            "certificate_hash": "13B474EA321A4F1EC513CD1E610818C66FCC4219"
           }
         },
         {
-          "client_id": "786415300892-koflgaj4ko93jnp1lrf5fnrj6mnuu7v7.apps.googleusercontent.com",
+          "client_id": "203311415511-6t344mtr225v84f7trc3ejhlo0eo912p.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.example.windows10.passenger",
+            "certificate_hash": "CA96A5F39CEC7ED506952C9405FFC458AFF8CBB8"
+          }
+        },
+        {
+          "client_id": "203311415511-rlka1sukhjhgb3lcs9l1tiod26pjajqk.apps.googleusercontent.com",
           "client_type": 3
         }
       ],
       "api_key": [
         {
-          "current_key": "AIzaSyA4WYfTST22rHK6K4D8KieIluH4CseyN2k"
+          "current_key": "AIzaSyB3fH_cIyiD6UYbnmaiWUShvd3jFyi8R8o"
         }
       ],
       "services": {
@@ -40,7 +48,7 @@
           "status": 2,
           "other_platform_oauth_client": [
             {
-              "client_id": "786415300892-koflgaj4ko93jnp1lrf5fnrj6mnuu7v7.apps.googleusercontent.com",
+              "client_id": "203311415511-rlka1sukhjhgb3lcs9l1tiod26pjajqk.apps.googleusercontent.com",
               "client_type": 3
             }
           ]
