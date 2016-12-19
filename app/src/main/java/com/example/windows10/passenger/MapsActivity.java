@@ -5,6 +5,7 @@ import android.Manifest;
 import android.content.Intent;
 import android.content.IntentSender;
 import android.content.pm.PackageManager;
+import android.graphics.Color;
 import android.location.Location;
 import android.support.annotation.NonNull;
 import android.support.annotation.Nullable;
@@ -15,6 +16,12 @@ import android.support.v4.content.ContextCompat;
 import android.view.View;
 import android.widget.Toast;
 
+import com.akexorcist.googledirection.DirectionCallback;
+import com.akexorcist.googledirection.GoogleDirection;
+import com.akexorcist.googledirection.constant.TransportMode;
+import com.akexorcist.googledirection.constant.Unit;
+import com.akexorcist.googledirection.model.Direction;
+import com.akexorcist.googledirection.util.DirectionConverter;
 import com.google.android.gms.common.ConnectionResult;
 import com.google.android.gms.common.api.GoogleApiClient;
 import com.google.android.gms.common.api.PendingResult;
@@ -35,6 +42,7 @@ import com.google.android.gms.maps.model.BitmapDescriptorFactory;
 import com.google.android.gms.maps.model.LatLng;
 import com.google.android.gms.maps.model.Marker;
 import com.google.android.gms.maps.model.MarkerOptions;
+import com.google.android.gms.maps.model.Polyline;
 import com.google.firebase.database.ChildEventListener;
 import com.google.firebase.database.DataSnapshot;
 import com.google.firebase.database.DatabaseError;
@@ -64,7 +72,7 @@ public class MapsActivity extends FragmentActivity implements OnMapReadyCallback
     private DatabaseReference mDatabase;
     private DatabaseReference Database;
     private ChildEventListener v;
-
+private Polyline polyline;
     private String Uid;
     private String path="users/passenger/";
     private Map<String,Driver_Marker> d=new HashMap<>();
@@ -159,6 +167,7 @@ public class MapsActivity extends FragmentActivity implements OnMapReadyCallback
                 if(destinationLocation!=null){
 
                     destinationMarker.remove();
+                    polyline.remove();
 
 
                 }
@@ -169,6 +178,39 @@ public class MapsActivity extends FragmentActivity implements OnMapReadyCallback
                         .title("Destination Location")
                         .snippet("This is destination location"));
                 destinationLocation=latLng;
+                String serverKey = "AIzaSyAgBqU-Rmq-_qL-VFFO8arr9u_I-bUHyIE";
+                final LatLng origin = new LatLng(p.x,p.y);
+
+                final LatLng destination = new LatLng(latLng.latitude,latLng.longitude);
+
+                    GoogleDirection.withServerKey(serverKey)
+                            .from(origin)
+                            .to(destination)
+                            .transportMode(TransportMode.WALKING).unit(Unit.METRIC).alternativeRoute(true)
+                            .execute(new DirectionCallback() {
+                                @Override
+                                public void onDirectionSuccess(Direction direction, String rawBody) {
+                                    // Do something here
+                                    if (direction.isOK()) {
+
+
+                                        ArrayList<LatLng> directionPositionList = direction.getRouteList().get(0).getLegList().get(0).getDirectionPoint();
+                                         polyline=mMap.addPolyline(DirectionConverter.createPolyline(MapsActivity.this, directionPositionList, 5, Color.RED));
+
+
+                                    }
+                                }
+
+                                @Override
+                                public void onDirectionFailure(Throwable t) {
+                                    // Do something here
+
+                                    Toast.makeText(MapsActivity.this, "fail", Toast.LENGTH_SHORT).show();
+                                }
+                            });
+
+
+
                 Toast.makeText(MapsActivity.this,"Destination location set",Toast.LENGTH_SHORT).show();
 
             }
@@ -319,6 +361,7 @@ public class MapsActivity extends FragmentActivity implements OnMapReadyCallback
                     Toast.makeText(MapsActivity.this,"driver gets offline",Toast.LENGTH_SHORT).show();
 
                 }
+
                  else if(mp.getD().r_status==-1 && driver.r_status==0){
 
                      if(!driver.passengerKey.equals(p.key)){
@@ -343,7 +386,8 @@ public class MapsActivity extends FragmentActivity implements OnMapReadyCallback
 
                  }
 
-                else if((mp.getD().r_status==0 && driver.r_status==-1) || (mp.getD().r_status==1 && driver.r_status==-1) ){
+
+                else if((mp.getD().r_status==0 && driver.r_status==-1) || (mp.getD().r_status==1 && driver.r_status==-1) ) {
 
 
 
@@ -352,6 +396,10 @@ public class MapsActivity extends FragmentActivity implements OnMapReadyCallback
 
                          DrawMarker(key);
                          Toast.makeText(MapsActivity.this,"driver free",Toast.LENGTH_SHORT).show();
+                     }
+                    else {
+                         mp.getM().setIcon(BitmapDescriptorFactory.fromResource(R.drawable.ic_action_name));
+                         Toast.makeText(MapsActivity.this,"Request end",Toast.LENGTH_SHORT).show();
                      }
 
                      mp.getD().r_status=driver.r_status;
