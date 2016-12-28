@@ -13,35 +13,41 @@
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:orientation="vertical">
+        android:orientation="vertical"
+        android:gravity="center">
 
 
         <TextView
-            android:text="TextView"
+            style="@style/TextView"
+            android:text="Name:"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:id="@+id/name1" />
 
         <TextView
-            android:text="TextView"
+            style="@style/TextView"
+            android:text="Contact Number:"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:id="@+id/contactNumber1" />
 
         <TextView
-            android:text="TextView"
+            style="@style/TextView"
+            android:text="CNIC:"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:id="@+id/cnic1" />
 
         <TextView
-            android:text="TextView"
+            style="@style/TextView"
+            android:text="Taxi Number:"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:id="@+id/taxiNumber1" />
 
         <TextView
-            android:text="TextView"
+            style="@style/TextView"
+            android:text="Age:"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:id="@+id/age1" />

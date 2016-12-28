@@ -8,6 +8,9 @@
     android:paddingLeft="@dimen/activity_horizontal_margin"
     android:paddingRight="@dimen/activity_horizontal_margin"
     android:paddingTop="@dimen/activity_vertical_margin"
+    android:background="#5d4037"
+    android:backgroundTint="#455a64"
+
     tools:context="com.example.windows10.passenger.LoginActivity">
 
     <!-- Login progress -->
@@ -36,6 +39,7 @@
 
                 <AutoCompleteTextView
                     android:id="@+id/email"
+                    android:textColor="#fafafa"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:hint="@string/prompt_email"
@@ -50,6 +54,7 @@
                 android:layout_height="wrap_content">
 
                 <EditText
+                    android:textColor="#fafafa"
                     android:id="@+id/password"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
@@ -64,18 +69,24 @@
             </android.support.design.widget.TextInputLayout>
 
             <Button
+                android:background="@drawable/button_selector"
+                android:textColor="#fafafa"
+                android:layout_marginBottom="10dp"
+
                 android:id="@+id/email_sign_in_button"
                 style="?android:textAppearanceSmall"
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content"
+                android:layout_height="53dp"
                 android:layout_marginTop="16dp"
                 android:text="@string/action_sign_in"
                 android:textStyle="bold" />
 
             <Button
+                android:background="@drawable/button_selector"
+                android:textColor="#fafafa"
                 android:text="Sign up "
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content"
+                android:layout_height="53dp"
                 android:id="@+id/button2"
                 android:onClick="onClickSignupButton"/>
 

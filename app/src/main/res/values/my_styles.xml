@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <style name="ActivityStyle">
+
+    </style>
+    <style name="Button">
+        <item name="android:layout_marginBottom">5dp</item>
+        <item name="android:layout_marginTop">5dp</item>
+        <item name="android:textStyle">bold</item>
+        <item name="android:fontFamily">monospace</item>
+        <item name="android:textColor">#fafafa</item>
+        <item name="android:textAlignment">center</item>
+        <item name="android:layout_gravity">center</item>
+
+    </style>
+
+    <style name="TextView">
+        <item name="android:textSize">26sp</item>
+        <item name="android:fontFamily">monospace</item>
+        <item name="android:textColor">#616161</item>
+        <item name="android:textStyle">bold</item>
+        <item name="android:layout_margin">22sp</item>
+        <item name="android:textAlignment">center</item>
+
+
+    </style>
+
+</resources>

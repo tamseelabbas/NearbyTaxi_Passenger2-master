@@ -19,11 +19,11 @@ public class DriverDetail extends AppCompatActivity {
 
 
 
-        name.setText(MapsActivity.driverForMarker.name);
-        age.setText(Long.toString(MapsActivity.driverForMarker.age));
-        contactNumber.setText(MapsActivity.driverForMarker.contactNumber);
-        taxiNumber.setText(MapsActivity.driverForMarker.taxiNumber);
-        cnic.setText(MapsActivity.driverForMarker.cnic);
+        name.setText(name.getText()+MapsActivity.driverForMarker.name);
+        age.setText(age.getText()+Long.toString(MapsActivity.driverForMarker.age));
+        contactNumber.setText(contactNumber.getText()+MapsActivity.driverForMarker.contactNumber);
+        taxiNumber.setText(taxiNumber.getText()+MapsActivity.driverForMarker.taxiNumber);
+        cnic.setText(cnic.getText()+MapsActivity.driverForMarker.cnic);
 
 
     }

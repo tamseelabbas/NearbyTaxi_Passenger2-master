@@ -220,7 +220,7 @@ private Polyline polyline;
 
     @Override
     protected void onDestroy() {
-        Toast.makeText(this,"ondistroy",Toast.LENGTH_SHORT).show();
+//        Toast.makeText(this,"ondistroy",Toast.LENGTH_SHORT).show();
         mDatabase = FirebaseDatabase.getInstance().getReference(path+Uid+"/status");
         mDatabase.setValue(0);
 
@@ -266,7 +266,7 @@ private Polyline polyline;
 
 
         super.onStop();
-        Toast.makeText(this,"onstopcalled",Toast.LENGTH_SHORT).show();
+//        Toast.makeText(this,"onstopcalled",Toast.LENGTH_SHORT).show();
 
     }
 
@@ -352,13 +352,13 @@ private Polyline polyline;
                 if(mp.getD().status==0&&driver.status==1){
                     mp.d.status=1; // can remove
                     DrawMarker(dataSnapshot.getKey());
-                    Toast.makeText(MapsActivity.this,"Driver gets online",Toast.LENGTH_SHORT).show();
+//                    Toast.makeText(MapsActivity.this,"Driver gets online",Toast.LENGTH_SHORT).show();
 
                 }
                 else if(mp.getD().status==1&&driver.status==0){
                     mp.d.status=0; // can remove
                         RemoveMarker(key);
-                    Toast.makeText(MapsActivity.this,"driver gets offline",Toast.LENGTH_SHORT).show();
+//                    Toast.makeText(MapsActivity.this,"driver gets offline",Toast.LENGTH_SHORT).show();
 
                 }
 
@@ -366,7 +366,7 @@ private Polyline polyline;
 
                      if(!driver.passengerKey.equals(p.key)){
                          RemoveMarker(key);
-                         Toast.makeText(MapsActivity.this,"driver reserver",Toast.LENGTH_SHORT).show();
+//                         Toast.makeText(MapsActivity.this,"driver reserver",Toast.LENGTH_SHORT).show();
                      }
 
 
@@ -395,10 +395,10 @@ private Polyline polyline;
                      if(!mp.getD().passengerKey.equals(p.key)){
 
                          DrawMarker(key);
-                         Toast.makeText(MapsActivity.this,"driver free",Toast.LENGTH_SHORT).show();
+//                         Toast.makeText(MapsActivity.this,"driver free",Toast.LENGTH_SHORT).show();
                      }
                     else {
-                         mp.getM().setIcon(BitmapDescriptorFactory.fromResource(R.drawable.ic_action_name));
+                         mp.getM().setIcon(BitmapDescriptorFactory.fromResource(R.drawable.unnamed));
                          Toast.makeText(MapsActivity.this,"Request end",Toast.LENGTH_SHORT).show();
                      }
 
@@ -466,7 +466,7 @@ private Polyline polyline;
         }
         else {
             d_m.m = mMap.addMarker(new MarkerOptions()
-                    .icon(BitmapDescriptorFactory.fromResource(R.drawable.ic_action_name))
+                    .icon(BitmapDescriptorFactory.fromResource(R.drawable.unnamed))
                     .anchor(0.5f, 0.5f) // Anchors the marker on the bottom left
                     .position(new LatLng(d_m.getD().x, d_m.getD().y))
                     .title("Taxi no.")
